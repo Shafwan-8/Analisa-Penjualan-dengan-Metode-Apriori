@@ -56,10 +56,10 @@
                           <label for="kategoriProduk">Kategori</label>
                           <select name="kategoriProduk" id="kategoriProduk" class="form-select">
                             <option value="" selected disabled>-- Pilih Kategori --</option>
-                            <option value="">SAYURAN</option>
-                            <option value="">PEMBERSIH</option>
-                            <option value="">MINYAK</option>
-                            <option value="">TELUR</option>
+                            <option value="SAYURAN">SAYURAN</option>
+                            <option value="PEMBERSIH">PEMBERSIH</option>
+                            <option value="MINYAK">MINYAK</option>
+                            <option value="TELUR">TELUR</option>
                           </select>
                         </div>
                       </div>
@@ -79,7 +79,7 @@
               </div>
             </div>
           </div>
-          <div class="card-body">Ini Produk</div>
+          <div class="card-body">data table</div>
         </div>
       </div>
     </div>
