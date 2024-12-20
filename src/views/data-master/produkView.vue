@@ -152,11 +152,11 @@ Swal.fire({
                   <td>{{ data.Harga }}</td>
                   <td>{{ data.Kategori }}</td>
                   <td>
-                    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#updateModal">
-                      <i class="bi bi-pencil"></i>
+                    <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#updateModal">
+                      <i class="bi bi-pencil me-2"></i>Edit
                     </button>
-                    <button type="button" class="btn btn-danger">
-                      <i class="bi bi-trash"></i>
+                    <button type="button" class="btn btn-danger btn-sm me-2">
+                      <i class="bi bi-trash me-2"></i>Hapus
                     </button>
                   </td>
                 </tr>
