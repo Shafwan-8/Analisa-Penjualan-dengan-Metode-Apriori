@@ -4,7 +4,10 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
- 
+
+import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
+import "datatables.net-responsive-bs5";
+
 // import '../public/assets/extensions/bootstrap-icons/font/bootstrap-icons.css';
 // import '../public/assets/compiled/css/app.css'
 // import '../public/assets/compiled/css/app-dark.css'

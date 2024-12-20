@@ -1,22 +1,32 @@
 <script setup>
-import DataTable from 'datatables.net-vue3';
-import DataTablesCore from 'datatables.net-bs5';
+import { onMounted, nextTick } from "vue";
+import DataTable from "datatables.net-dt";
 
-DataTable.use(DataTablesCore);
-
-const data = [
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
-  [1, "eewq", "12:00", 4, 3],
+const datas = [
+  { idTransaksi: "eewq", waktuTransaksi: "12:00", totalProduk: 4, nominalTransaksi: 3 },
+  { idTransaksi: "abcd", waktuTransaksi: "14:00", totalProduk: 6, nominalTransaksi: 5 },
+  { idTransaksi: "xyzw", waktuTransaksi: "15:00", totalProduk: 2, nominalTransaksi: 1 },
 ];
+
+onMounted(async () => {
+  await nextTick();
+  new DataTable("#tableTransaksi", {
+    responsive: true,
+    paging: true,
+    searching: true,
+    ordering: true,
+    info: true,
+    language: {
+      paginate: {
+        previous: "<",
+        next: ">",
+      },
+      search: "Cari:",
+      lengthMenu: "Tampilkan _MENU_ entri",
+      info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
+    },
+  });
+});
 </script>
 
 <template>
@@ -101,11 +111,11 @@ const data = [
             <div class="card">
               <div class="card-header pb-0">
                 <h4>Transaksi Terakhir</h4>
-                <hr class="mt-3">
+                <hr class="mt-3" />
               </div>
               <div class="card-body">
-                <DataTable :data="data" class="display table table-striped">
-                  <thead>
+                <table id="tableTransaksi" class="table table-striped table-bordered w-100">
+                  <thead class="thead-dark">
                     <tr>
                       <th>#</th>
                       <th>ID Transaksi</th>
@@ -114,7 +124,16 @@ const data = [
                       <th>Nominal Transaksi</th>
                     </tr>
                   </thead>
-                </DataTable>
+                  <tbody>
+                    <tr v-for="(data, i) in datas" :key="i">
+                      <td>{{ i + 1 }}</td>
+                      <td>{{ data.idTransaksi }}</td>
+                      <td>{{ data.waktuTransaksi }}</td>
+                      <td>{{ data.totalProduk }}</td>
+                      <td>{{ data.nominalTransaksi }}</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
