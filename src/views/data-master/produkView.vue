@@ -42,11 +42,25 @@ const showSwal = () => {
 
 const showSwalDelete = () => {
 Swal.fire({
-  icon: 'success',
-  title: 'Berhasil',
-  text: 'Data Produk Berhasil Dihapus',
-  showConfirmButton: true,
+  title: 'Apakah Anda Yakin?',
+  text: "Data produk akan dihapus dan tidak dapat dikembalikan!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Ya, Hapus!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      icon: 'success',
+      title: 'Berhasil',
+      text: 'Data Produk Berhasil Dihapus',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 });
+
 }
 
 </script>
@@ -155,7 +169,7 @@ Swal.fire({
                     <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#updateModal">
                       <i class="bi bi-pencil me-2"></i>Edit
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm me-2">
+                    <button type="button" class="btn btn-danger btn-sm me-2" @click="showSwalDelete()">
                       <i class="bi bi-trash me-2"></i>Hapus
                     </button>
                   </td>
