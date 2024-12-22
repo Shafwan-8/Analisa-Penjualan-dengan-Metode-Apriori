@@ -4,8 +4,18 @@ import DataTable from "datatables.net-dt";
 import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 
 const datas = [
-  { noFaktur: "123456789", totalProduk: "4", totalQty: "11", totalHarga: "40000"},
-  { noFaktur: "987654321", totalProduk: "7", totalQty: "22", totalHarga: "30000"},
+  {
+    noFaktur: "123456789",
+    totalProduk: "4",
+    totalQty: "11",
+    totalHarga: "40000",
+  },
+  {
+    noFaktur: "987654321",
+    totalProduk: "7",
+    totalQty: "22",
+    totalHarga: "30000",
+  },
 ];
 
 onMounted(async () => {
@@ -26,19 +36,13 @@ onMounted(async () => {
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
     columnDefs: [
-      {
-        width: "60px",
-        targets: 0
-      },
-      {
-        width: "400px",
-        targets: 1
-      },
-    ]
+      { width: "60px", targets: 0, },
+      { width: "400px", targets: 1, },
+      { className: "text-start", targets: [0, 1, 2, 3, 4] }
+    ],
   });
 });
 </script>
-
 
 <template>
   <div class="page-title">
@@ -50,7 +54,9 @@ onMounted(async () => {
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Data Master</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Penjualan</li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Penjualan
+            </li>
           </ol>
         </nav>
       </div>
@@ -80,24 +86,27 @@ onMounted(async () => {
                     role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="tambahPenjualan">Tambah Data Penjualan
+                        <h5 class="modal-title" id="tambahPenjualan">
+                          Tambah Data Penjualan
                         </h5>
                       </div>
                       <div class="modal-body">
                         <div class="form-group">
                           <label for="namaProduk">Nama Produk</label>
-                          <input type="text" name="namaProduk" id="namaProduk" class="form-control">
+                          <input type="text" name="namaProduk" id="namaProduk" class="form-control" />
                         </div>
 
                         <div class="form-group">
                           <label for="hargaProduk">Harga</label>
-                          <input type="text" name="hargaProduk" id="hargaProduk" class="form-control">
+                          <input type="text" name="hargaProduk" id="hargaProduk" class="form-control" />
                         </div>
 
                         <div class="form-group">
                           <label for="kategoriProduk">Kategori</label>
                           <select name="kategoriProduk" id="kategoriProduk" class="form-select">
-                            <option value="" selected disabled>-- Pilih Kategori --</option>
+                            <option value="" selected disabled>
+                              -- Pilih Kategori --
+                            </option>
                             <option value="SAYURAN">SAYURAN</option>
                             <option value="PEMBERSIH">PEMBERSIH</option>
                             <option value="MINYAK">MINYAK</option>
@@ -118,9 +127,8 @@ onMounted(async () => {
                     </div>
                   </div>
                 </div>
-
               </div>
-              <hr class="mb-2 mt-3">
+              <hr class="mb-2 mt-3" />
             </div>
           </div>
           <div class="card-body">

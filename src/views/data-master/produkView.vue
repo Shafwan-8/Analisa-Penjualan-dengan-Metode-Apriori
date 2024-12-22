@@ -28,14 +28,9 @@ onMounted(async () => {
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
     columnDefs: [
-      {
-        width: "60px",
-        targets: 0
-      },
-      {
-        width: "400px",
-        targets: 1
-      },
+      { width: "60px", targets: 0, },
+      { width: "400px", targets: 1, },
+      { className: "text-start", targets: [0, 1, 2, 3, 4] }
     ]
   });
 });

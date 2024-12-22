@@ -25,6 +25,9 @@ onMounted(async () => {
       lengthMenu: "Tampilkan _MENU_ entri",
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
+    columnDefs: [
+      { className: "text-start", targets: [0, 1, 2, 3, 4] }
+    ]
   });
 });
 </script>
