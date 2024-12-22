@@ -1,9 +1,12 @@
 <script setup>
-import Swal from 'sweetalert2';
-
 import { onMounted, nextTick } from "vue";
 import DataTable from "datatables.net-dt";
 import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
+
+const datas = [
+  { noFaktur: "123456789", totalProduk: "4", totalQty: "11", totalHarga: "40000"},
+  { noFaktur: "987654321", totalProduk: "7", totalQty: "22", totalHarga: "30000"},
+];
 
 onMounted(async () => {
   await nextTick();
@@ -133,12 +136,12 @@ onMounted(async () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
+                <tr v-for="(data, i) in datas" :key="i">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ data.noFaktur }}</td>
+                  <td>{{ data.totalProduk }}</td>
+                  <td>{{ data.totalQty }}</td>
+                  <td>{{ data.totalHarga }}</td>
                   <td>
                     <button type="button" class="btn btn-primary btn-sm me-2">
                       <i class="bi bi-folder me-2"></i>Detail
