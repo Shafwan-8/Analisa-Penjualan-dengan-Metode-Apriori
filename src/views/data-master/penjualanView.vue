@@ -22,6 +22,16 @@ onMounted(async () => {
       lengthMenu: "Tampilkan _MENU_ entri",
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
+    columnDefs: [
+      {
+        width: "60px",
+        targets: 0
+      },
+      {
+        width: "400px",
+        targets: 1
+      },
+    ]
   });
 });
 </script>
