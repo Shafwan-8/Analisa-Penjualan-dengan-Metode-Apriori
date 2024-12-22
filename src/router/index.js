@@ -4,7 +4,8 @@ import DashboardView from '@/views/DashboardView.vue'
 import prosesAprioriView from '@/views/prosesAprioriView.vue'
 import LaporanView from '@/views/laporanView.vue'
 import ProdukView from '@/views/data-master/produkView.vue'
-import PenjualanView from '@/views/data-master/penjualanView.vue'
+import PenjualanView from '@/views/data-master/penjualan/penjualanView.vue'
+import DetailPenjualanView from '@/views/data-master/penjualan/detailPenjualanView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +41,12 @@ const router = createRouter({
           name: 'penjualan',
           component: PenjualanView,
         },
+        {
+          path: '/penjualan/:id',
+          name: 'detailPenjualan',
+          component: DetailPenjualanView,
+          props: true
+        }
       ]
     },
   ],

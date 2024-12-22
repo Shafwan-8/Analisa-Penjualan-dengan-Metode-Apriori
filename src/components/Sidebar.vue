@@ -100,7 +100,7 @@
 
               <li
                 class="submenu-item"
-                :class="$route.name == 'penjualan' ? 'active' : ''"
+                :class="$route.name == 'penjualan' || $route.name == 'detailPenjualan' ? 'active' : ''"
               >
                 <RouterLink :to="{ name: 'penjualan' }" class="submenu-link">
                   Data Penjualan

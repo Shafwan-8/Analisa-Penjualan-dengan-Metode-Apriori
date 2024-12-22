@@ -7,7 +7,9 @@ import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 
 const datas = [
   { namaProduk: "Sabun", Harga: "12000", Kategori: "PEWANGI"},
-  { namaProduk: "Byclin", Harga: "14000", Kategori: "PEMBERSIH"},
+  { namaProduk: "Byclin", Harga: "15000", Kategori: "PEMBERSIH"},
+  { namaProduk: "Buku Atlas", Harga: "20000", Kategori: "PENDIDIKAN"},
+  { namaProduk: "Masako Rasa Ayam", Harga: "10000", Kategori: "BUMBU"},
 ];
 
 onMounted(async () => {
@@ -121,7 +123,7 @@ Swal.fire({
 
                         <div class="form-group">
                           <label for="hargaProduk">Harga</label>
-                          <input type="text" name="hargaProduk" id="hargaProduk" class="form-control">
+                          <input type="number" name="hargaProduk" id="hargaProduk" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -133,6 +135,8 @@ Swal.fire({
                             <option value="PEWANGI">PEWANGI</option>
                             <option value="MINYAK">MINYAK</option>
                             <option value="TELUR">TELUR</option>
+                            <option value="PENDIDIKAN">PENDIDIKAN</option>
+                            <option value="BUMBU">BUMBU</option>
                           </select>
                         </div>
                       </div>
@@ -168,7 +172,7 @@ Swal.fire({
                 <tr v-for="(data, i) in datas" :key="i">
                   <td>{{ i + 1 }}</td>
                   <td>{{ data.namaProduk }}</td>
-                  <td>{{ data.Harga }}</td>
+                  <td>Rp. {{ data.Harga }}</td>
                   <td>{{ data.Kategori }}</td>
                   <td>
                     <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#updateModal">
@@ -192,18 +196,18 @@ Swal.fire({
       <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="updateModal">Tambah Data Penjualan
+            <h5 class="modal-title" id="updateModal">Edit Data Produk
             </h5>
           </div>
           <div class="modal-body">
             <div class="form-group">
               <label for="namaProduk">Nama Produk</label>
-              <input type="text" name="namaProduk" id="namaProduk" class="form-control" value="Stella">
+              <input type="text" name="namaProduk" id="namaProduk" class="form-control" value="Sabun">
             </div>
 
             <div class="form-group">
               <label for="hargaProduk">Harga</label>
-              <input type="text" name="hargaProduk" id="hargaProduk" class="form-control" value="14000">
+              <input type="number" name="hargaProduk" id="hargaProduk" class="form-control" value="12000">
             </div>
 
             <div class="form-group">
@@ -212,9 +216,10 @@ Swal.fire({
                 <option value="" disabled>-- Pilih Kategori --</option>
                 <option value="SAYURAN">SAYURAN</option>
                 <option value="DETERJEN">DETERJEN</option>
-                <option value="PEWANGI">PEWANGI</option>
+                <option value="PEWANGI" selected >PEWANGI</option>
                 <option value="MINYAK">MINYAK</option>
                 <option value="TELUR">TELUR</option>
+                <option value="BUMBU">BUMBU</option>
               </select>
             </div>
           </div>

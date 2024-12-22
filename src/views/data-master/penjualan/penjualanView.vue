@@ -1,14 +1,15 @@
 <script setup>
 import { onMounted, nextTick } from "vue";
 import DataTable from "datatables.net-dt";
+import {RouterLink} from "vue-router";
 import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 
 const datas = [
   {
     noFaktur: "123456789",
     totalProduk: "4",
-    totalQty: "11",
-    totalHarga: "40000",
+    totalQty: "5",
+    totalHarga: "57000",
   },
   {
     noFaktur: "987654321",
@@ -91,28 +92,22 @@ onMounted(async () => {
                         </h5>
                       </div>
                       <div class="modal-body">
+
                         <div class="form-group">
-                          <label for="namaProduk">Nama Produk</label>
-                          <input type="text" name="namaProduk" id="namaProduk" class="form-control" />
+                          <label for="totalProduk">Total Produk</label>
+                          <input type="number" name="totalProduk" id="totalProduk" class="form-control" />
                         </div>
 
                         <div class="form-group">
-                          <label for="hargaProduk">Harga</label>
-                          <input type="text" name="hargaProduk" id="hargaProduk" class="form-control" />
+                          <label for="totalQty">Total Qty.</label>
+                          <input type="number" name="totalQty" id="totalQty" class="form-control" />
                         </div>
 
                         <div class="form-group">
-                          <label for="kategoriProduk">Kategori</label>
-                          <select name="kategoriProduk" id="kategoriProduk" class="form-select">
-                            <option value="" selected disabled>
-                              -- Pilih Kategori --
-                            </option>
-                            <option value="SAYURAN">SAYURAN</option>
-                            <option value="PEMBERSIH">PEMBERSIH</option>
-                            <option value="MINYAK">MINYAK</option>
-                            <option value="TELUR">TELUR</option>
-                          </select>
+                          <label for="totalHarga">Total Harga</label>
+                          <input type="number" name="totalHarga" id="totalHarga" class="form-control" />
                         </div>
+
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
@@ -149,11 +144,11 @@ onMounted(async () => {
                   <td>{{ data.noFaktur }}</td>
                   <td>{{ data.totalProduk }}</td>
                   <td>{{ data.totalQty }}</td>
-                  <td>{{ data.totalHarga }}</td>
+                  <td>Rp. {{ data.totalHarga }}</td>
                   <td>
-                    <button type="button" class="btn btn-primary btn-sm me-2">
+                    <RouterLink :to="{name: 'detailPenjualan', params: {id: data.noFaktur}}" class="btn btn-primary btn-sm me-2">
                       <i class="bi bi-folder me-2"></i>Detail
-                    </button>
+                    </RouterLink>
                   </td>
                 </tr>
               </tbody>
