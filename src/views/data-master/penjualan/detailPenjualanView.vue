@@ -14,8 +14,8 @@ const datas = [
 onMounted(async () => {
   await nextTick();
   new DataTable("#tableDetailPenjualan", {
-    responsive: true,
     paging: true,
+    scrollX: true,
     searching: true,
     ordering: true,
     info: true,
@@ -70,7 +70,7 @@ onMounted(async () => {
             </div>
           </div>
           <div class="card-body">
-            <table id="tableDetailPenjualan" class="table table-striped dataTable-table">
+            <table id="tableDetailPenjualan" class="table table-striped">
               <thead>
                 <tr>
                   <th>#</th>

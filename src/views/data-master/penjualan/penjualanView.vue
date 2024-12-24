@@ -22,8 +22,8 @@ const datas = [
 onMounted(async () => {
   await nextTick();
   new DataTable("#tabelProduk", {
-    responsive: true,
     paging: true,
+    scrollX: true,
     searching: true,
     ordering: true,
     info: true,
@@ -81,8 +81,7 @@ onMounted(async () => {
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="tambahPenjualan" tabindex="-1" role="dialog"
-                  aria-labelledby="tambahPenjualan" aria-hidden="true">
+                <div class="modal fade" id="tambahPenjualan" tabindex="-1" role="dialog" aria-labelledby="tambahPenjualan" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable"
                     role="document">
                     <div class="modal-content">

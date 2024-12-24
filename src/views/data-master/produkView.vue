@@ -15,9 +15,9 @@ const datas = [
 onMounted(async () => {
   await nextTick();
   new DataTable("#tabelProduk", {
-    responsive: true,
     paging: true,
     searching: true,
+    scrollX: true,
     ordering: true,
     info: true,
     language: {
@@ -175,10 +175,10 @@ Swal.fire({
                   <td>Rp. {{ data.Harga }}</td>
                   <td>{{ data.Kategori }}</td>
                   <td>
-                    <button type="button" class="btn btn-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#updateModal">
+                    <button type="button" class="btn btn-primary btn-sm m-2" data-bs-toggle="modal" data-bs-target="#updateModal">
                       <i class="bi bi-pencil me-2"></i>Edit
                     </button>
-                    <button type="button" class="btn btn-danger btn-sm me-2" @click="showSwalDelete()">
+                    <button type="button" class="btn btn-danger btn-sm m-2" @click="showSwalDelete()">
                       <i class="bi bi-trash me-2"></i>Hapus
                     </button>
                   </td>
