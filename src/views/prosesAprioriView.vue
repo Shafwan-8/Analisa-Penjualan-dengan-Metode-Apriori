@@ -1,6 +1,10 @@
 <script setup>
 import Swal from 'sweetalert2';
 
+const options = {
+  numbers: Array.from({ length: 100 }, (v, k) => k + 1)
+}
+
 const showConfirmSwal = () => {
   Swal.fire({
     title: 'Apakah Anda Yakin?',
@@ -51,18 +55,22 @@ const showConfirmSwal = () => {
             <div class="row">
               <div class="col-md-6">
                 <div class="mb-3">
-                  <label class="form-label">Min. Support</label>
-                  <select class="form-select">
-                    <option value="1">1</option>
-                  </select>
+                  <div class="form-group">
+                    <label class="form-label">Min. Support</label>
+                    <select class="form-control">
+                      <option v-for="option in options.numbers" value="{{ option }}">{{ option }}</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="mb-3">
-                  <label class="form-label">Min. Confidence</label>
-                  <select class="form-select">
-                    <option value="1">1</option>
-                  </select>
+                  <div class="form-group">
+                    <label class="form-label">Min. Confidence</label>
+                    <select class="form-control">
+                      <option v-for="option in options.numbers" value="{{ option }}">{{ option }}</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
