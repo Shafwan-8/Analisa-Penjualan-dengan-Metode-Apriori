@@ -5,10 +5,10 @@ import DataTable from "datatables.net-dt";
 import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 
 const datas = [
-    { kdProduk: "2ee3q", namaProduk: "Sabun", qty: "1"},
-    { kdProduk: "bb4sq", namaProduk: "Byclin", qty: "2"},
-    { kdProduk: "bb4sq", namaProduk: "Buku Atlas", qty: "1"},
-    { kdProduk: "bb4sq", namaProduk: "Masako Rasa Ayam", qty: "1"},
+    { kdProduk: "2ee3q", namaProduk: "Sabun", qty: "1" },
+    { kdProduk: "bb4sq", namaProduk: "Byclin", qty: "2" },
+    { kdProduk: "bb4sq", namaProduk: "Buku Atlas", qty: "1" },
+    { kdProduk: "bb4sq", namaProduk: "Masako Rasa Ayam", qty: "1" },
 ];
 
 onMounted(async () => {
