@@ -122,7 +122,7 @@
           <li class="sidebar-item" :class="$route.name == 'laporan' ? 'active' : ''">
             <RouterLink :to="{ name: 'laporan' }" class="sidebar-link">
               <i class="bi bi-file-earmark-bar-graph-fill"></i>
-              <span>Laporan</span>
+              <span>Laporan Apriori</span>
             </RouterLink>
           </li>
         </ul>

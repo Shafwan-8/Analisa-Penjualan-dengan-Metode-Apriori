@@ -14,7 +14,7 @@ const datas = [
 
 onMounted(async () => {
   await nextTick();
-  new DataTable("#tabelProduk", {
+  new DataTable("#dataTable", {
     paging: true,
     searching: true,
     scrollX: true,
@@ -30,8 +30,8 @@ onMounted(async () => {
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
     columnDefs: [
-      { width: "60px", targets: 0, },
-      { width: "400px", targets: 1, },
+      { width: "5%", targets: 0, },
+      { width: "40%", targets: 1, },
       { className: "text-start", targets: [0, 1, 2, 3, 4] }
     ]
   });
@@ -158,7 +158,7 @@ Swal.fire({
             </div>
           </div>
           <div class="card-body">
-            <table id="tabelProduk" class="table table-striped table-bordered w-100">
+            <table id="dataTable" class="table table-striped table-bordered w-100">
               <thead>
                 <tr>
                   <th>#</th>
@@ -238,3 +238,14 @@ Swal.fire({
     </div>
   </div>
 </template>
+
+
+<style scoped>
+#dataTable thead th {
+  font-size: 14px;
+}
+
+#dataTable tbody td {
+  font-size: 14px;
+}
+</style>

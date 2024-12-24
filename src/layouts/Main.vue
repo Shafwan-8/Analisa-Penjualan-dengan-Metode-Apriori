@@ -14,10 +14,9 @@
 import Sidebar from "@/components/Sidebar.vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import { onMounted } from "vue";
+import { onMounted, nextTick } from "vue";
 
 onMounted(() => {
   compiledApp();
-  compiledApexChart();
 });
 </script>

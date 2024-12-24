@@ -5,15 +5,15 @@ import DataTable from "datatables.net-dt";
 import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 
 const datas = [
-    { kdProduk: "2ee3q", namaProduk: "Sabun", qty: "1" },
-    { kdProduk: "bb4sq", namaProduk: "Byclin", qty: "2" },
-    { kdProduk: "bb4sq", namaProduk: "Buku Atlas", qty: "1" },
-    { kdProduk: "bb4sq", namaProduk: "Masako Rasa Ayam", qty: "1" },
+  { kdProduk: "2ee3q", namaProduk: "Sabun", qty: "1" },
+  { kdProduk: "bb4sq", namaProduk: "Byclin", qty: "2" },
+  { kdProduk: "bb4sq", namaProduk: "Buku Atlas", qty: "1" },
+  { kdProduk: "bb4sq", namaProduk: "Masako Rasa Ayam", qty: "1" },
 ];
 
 onMounted(async () => {
   await nextTick();
-  new DataTable("#tableDetailPenjualan", {
+  new DataTable("#dataTable", {
     paging: true,
     scrollX: true,
     searching: true,
@@ -29,8 +29,7 @@ onMounted(async () => {
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
     columnDefs: [
-      { width: "60px", targets: 0, },
-      { width: "400px", targets: 2, },
+      { width: "5%", targets: 0, },
       { className: "text-start", targets: [0, 1, 2, 3] }
     ],
   });
@@ -47,9 +46,7 @@ onMounted(async () => {
         <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Data Master</a></li>
-            <RouterLink :to="{ name: 'penjualan' }" class="breadcrumb-item"
-              >Penjualan</RouterLink
-            >
+            <RouterLink :to="{ name: 'penjualan' }" class="breadcrumb-item">Penjualan</RouterLink>
             <li class="breadcrumb-item active" aria-current="page">Detail Penjualan</li>
           </ol>
         </nav>
@@ -70,7 +67,7 @@ onMounted(async () => {
             </div>
           </div>
           <div class="card-body">
-            <table id="tableDetailPenjualan" class="table table-striped">
+            <table id="dataTable" class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th>#</th>
@@ -94,3 +91,13 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+#dataTable thead th {
+  font-size: 14px;
+}
+
+#dataTable tbody td {
+  font-size: 14px;
+}
+</style>
