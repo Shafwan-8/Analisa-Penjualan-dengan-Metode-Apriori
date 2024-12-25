@@ -7,10 +7,16 @@ import ProdukView from '@/views/data-master/produkView.vue'
 import PenjualanView from '@/views/data-master/penjualan/penjualanView.vue'
 import DetailPenjualanView from '@/views/data-master/penjualan/detailPenjualanView.vue'
 import HasilAprioriView from '@/views/proses apriori/hasilAprioriView.vue'
+import LoginView from '@/views/auth/loginView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    },
     {
       path: '/',
       name: 'public',
@@ -18,7 +24,7 @@ const router = createRouter({
       redirect: '/',
       children: [
         {
-          path: '/',
+          path: '/dashboard',
           name: 'dashboard',
           component: DashboardView,
         },

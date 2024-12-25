@@ -125,6 +125,13 @@
               <span>Laporan Apriori</span>
             </RouterLink>
           </li>
+
+          <li class="sidebar-item">
+            <div @click="logout" class="sidebar-link">
+              <i class="bi bi-box-arrow-in-left"></i>
+              <span>Logout</span>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -133,4 +140,22 @@
 
 <script setup>
 import { RouterLink } from "vue-router";
+import Swal from "sweetalert2";
+
+const logout = () => {
+  Swal.fire({
+    title: "Apakah anda yakin ingin logout?",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Ya",
+    cancelButtonText: "Tidak",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // localStorage.removeItem("token");
+      window.location.href = "/login";
+    }
+  });
+};
 </script>

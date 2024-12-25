@@ -3,9 +3,9 @@ import { onMounted, nextTick } from "vue";
 import DataTable from "datatables.net-dt";
 
 const datas = [
-  { idTransaksi: "eewq", waktuTransaksi: "12:00", totalProduk: 4, nominalTransaksi: 3 },
-  { idTransaksi: "abcd", waktuTransaksi: "14:00", totalProduk: 6, nominalTransaksi: 5 },
-  { idTransaksi: "xyzw", waktuTransaksi: "15:00", totalProduk: 2, nominalTransaksi: 1 },
+  { idTransaksi: "eewq", waktuTransaksi: "12-10-2024 12:10:22", totalProduk: 4, nominalTransaksi: 3 },
+  { idTransaksi: "abcd", waktuTransaksi: "23-8-2024 14:20:08", totalProduk: 6, nominalTransaksi: 5 },
+  { idTransaksi: "xyzw", waktuTransaksi: "17-9-2024 15:43:11", totalProduk: 2, nominalTransaksi: 1 },
 ];
 
 onMounted(async () => {
@@ -51,7 +51,7 @@ onMounted(async () => {
                   </div>
                   <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                     <h6 class="text-muted font-semibold">Total Transaksi</h6>
-                    <h6 class="font-extrabold mb-0">112.000</h6>
+                    <h6 class="font-extrabold mb-0">3</h6>
                   </div>
                 </div>
               </div>
@@ -68,7 +68,7 @@ onMounted(async () => {
                   </div>
                   <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                     <h6 class="text-muted font-semibold">Total Produk</h6>
-                    <h6 class="font-extrabold mb-0">183.000</h6>
+                    <h6 class="font-extrabold mb-0">4</h6>
                   </div>
                 </div>
               </div>
@@ -85,7 +85,7 @@ onMounted(async () => {
                   </div>
                   <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                     <h6 class="text-muted font-semibold">Avg. Harga Produk</h6>
-                    <h6 class="font-extrabold mb-0">80.000</h6>
+                    <h6 class="font-extrabold mb-0">Rp. 12.000,-</h6>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ onMounted(async () => {
                   </div>
                   <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                     <h6 class="text-muted font-semibold">Total User</h6>
-                    <h6 class="font-extrabold mb-0">112</h6>
+                    <h6 class="font-extrabold mb-0">1</h6>
                   </div>
                 </div>
               </div>
