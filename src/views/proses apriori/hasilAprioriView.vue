@@ -158,7 +158,7 @@ onMounted(async () => {
               </div>
             </div>
 
-            <div class="category border-bottom mb-4">
+            <div class="category mb-0">
               <div class="title">
                 <h5 class="text-semibold">Pola hasil analisa</h5>
               </div>
@@ -179,6 +179,8 @@ onMounted(async () => {
                 </table>
               </div>
             </div>
+
+            <button type="button" class="btn btn-primary">Cetak Hasil Analisa</button>
 
           </div>
         </div>
