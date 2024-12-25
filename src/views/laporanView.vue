@@ -1,6 +1,18 @@
 <script setup>
-  import { onMounted, nextTick } from "vue";
-  import DataTable from "datatables.net-dt";
+import { onMounted, nextTick } from "vue";
+import DataTable from "datatables.net-dt";
+import { RouterLink } from "vue-router";
+
+const datas = [
+  {
+    kdPengujian: "sk3kl",
+    namaPengujian: "Wawan Kurniawan",
+    waktuPengujian: "2024-11-16 05:45:23",
+    support: "1",
+    confidence: "1",
+    totalPolaProduk: "43"
+  },
+];
 onMounted(async () => {
   await nextTick();
   new DataTable("#dataTable", {
@@ -58,18 +70,18 @@ onMounted(async () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>sk3kl</td>
-                  <td>Wawan Kurniawan</td>
-                  <td>2024-11-16 05:45:23</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>43</td>
+                <tr v-for="(data, i) in datas" :key="i">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ data.kdPengujian }}</td>
+                  <td>{{ data.namaPengujian }}</td>
+                  <td>{{ data.waktuPengujian }}</td>
+                  <td>{{ data.support }}</td>
+                  <td>{{ data.confidence }}</td>
+                  <td>{{ data.totalPolaProduk }}</td>
                   <td>
-                    <button type="button" class="btn btn-primary btn-sm m-1">
+                    <RouterLink :to="{name: 'hasilAnalisa', params: {id: data.kdPengujian}}" class="btn btn-primary btn-sm m-1">
                       Detail
-                    </button>
+                    </RouterLink>
                     <button type="button" class="btn btn-success btn-sm m-1">
                       Cetak
                     </button>

@@ -57,7 +57,7 @@ const showConfirmSwal = () => {
                 <div class="mb-3">
                   <div class="form-group">
                     <label class="form-label">Min. Support</label>
-                    <select class="form-control">
+                    <select class="form-select">
                       <option v-for="option in options.numbers" value="{{ option }}">{{ option }}</option>
                     </select>
                   </div>
@@ -67,7 +67,7 @@ const showConfirmSwal = () => {
                 <div class="mb-3">
                   <div class="form-group">
                     <label class="form-label">Min. Confidence</label>
-                    <select class="form-control">
+                    <select class="form-select">
                       <option v-for="option in options.numbers" value="{{ option }}">{{ option }}</option>
                     </select>
                   </div>
