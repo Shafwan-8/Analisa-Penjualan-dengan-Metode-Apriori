@@ -23,10 +23,10 @@ onMounted(async () => {
     },
     columnDefs: [
       { width: "5%", targets: 0 },
-      { className: "text-start", targets: "_all" }
-    ]
+      { className: "text-start", targets: "_all" },
+    ],
   });
-})
+});
 </script>
 
 <template>
@@ -45,13 +45,15 @@ onMounted(async () => {
             </div>
           </div>
           <div class="card-body">
-
             <div class="category border-bottom mb-4">
               <div class="title">
                 <h5 class="text-semibold">Data Support Produk</h5>
               </div>
               <div class="table">
-                <table id="DataSupportProduk" class="display table table-striped table-bordered">
+                <table
+                  id="DataSupportProduk"
+                  class="display table table-striped table-bordered"
+                >
                   <thead>
                     <th>#</th>
                     <th>Kd. Produk</th>
@@ -76,7 +78,9 @@ onMounted(async () => {
 
             <div class="category border-bottom mb-4">
               <div class="title">
-                <h5 class="text-semibold">Item yang memenuhi syarat minimun support 100 %</h5>
+                <h5 class="text-semibold">
+                  Item yang memenuhi syarat minimun support 100 %
+                </h5>
               </div>
               <div class="table">
                 <table id="minSupport" class="display table table-striped table-bordered">
@@ -103,7 +107,10 @@ onMounted(async () => {
                 <h5 class="text-semibold">Kombinasi 2 itemset</h5>
               </div>
               <div class="table">
-                <table id="kombinasiItemset" class="display table table-striped table-bordered">
+                <table
+                  id="kombinasiItemset"
+                  class="display table table-striped table-bordered"
+                >
                   <thead>
                     <th>#</th>
                     <th>Kd. Kombinasi</th>
@@ -130,10 +137,15 @@ onMounted(async () => {
 
             <div class="category border-bottom mb-4">
               <div class="title">
-                <h5 class="text-semibold">Kombinasi yang memenuhi minimum confidence > 100%</h5>
+                <h5 class="text-semibold">
+                  Kombinasi yang memenuhi minimum confidence > 100%
+                </h5>
               </div>
               <div class="table">
-                <table id="kombinasiItemsetMinimum" class="display table table-striped table-bordered">
+                <table
+                  id="kombinasiItemsetMinimum"
+                  class="display table table-striped table-bordered"
+                >
                   <thead>
                     <th>#</th>
                     <th>Kd. Kombinasi</th>
@@ -163,7 +175,10 @@ onMounted(async () => {
                 <h5 class="text-semibold">Pola hasil analisa</h5>
               </div>
               <div class="table">
-                <table id="polaHasilAnalisa" class="display table table-striped table-bordered">
+                <table
+                  id="polaHasilAnalisa"
+                  class="display table table-striped table-bordered"
+                >
                   <thead>
                     <th>#</th>
                     <th>Pola</th>
@@ -181,7 +196,6 @@ onMounted(async () => {
             </div>
 
             <button type="button" class="btn btn-primary">Cetak Hasil Analisa</button>
-
           </div>
         </div>
       </div>
