@@ -21,6 +21,10 @@ onMounted(async () => {
       lengthMenu: "Tampilkan _MENU_ entri",
       info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
     },
+    columnDefs: [
+      { width: "5%", targets: 0 },
+      { className: "text-start", targets: "_all" }
+    ]
   });
 })
 </script>
@@ -153,7 +157,7 @@ onMounted(async () => {
                 </table>
               </div>
             </div>
-            
+
             <div class="category border-bottom mb-4">
               <div class="title">
                 <h5 class="text-semibold">Pola hasil analisa</h5>
@@ -175,7 +179,7 @@ onMounted(async () => {
                 </table>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>
