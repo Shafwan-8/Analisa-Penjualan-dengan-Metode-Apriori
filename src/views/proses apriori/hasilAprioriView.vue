@@ -79,7 +79,8 @@ onMounted(async () => {
             <div class="category border-bottom mb-4">
               <div class="title">
                 <h5 class="text-semibold">
-                  Item yang memenuhi syarat minimun support 100 %
+                  Item yang memenuhi syarat minimun support 100%
+                  <!-- nilai support 100% diambil dari pilihan opsi pada proses apriori view  -->
                 </h5>
               </div>
               <div class="table">
@@ -94,8 +95,8 @@ onMounted(async () => {
                     <tr>
                       <td>1</td>
                       <td>divhs</td>
-                      <td>Stella</td>
-                      <td>8</td>
+                      <td>Sabun</td>
+                      <td>8.25</td>
                     </tr>
                   </tbody>
                 </table>
@@ -123,12 +124,12 @@ onMounted(async () => {
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>divhs</td>
-                      <td>Stella</td>
-                      <td>8</td>
-                      <td>8</td>
-                      <td>8</td>
-                      <td>8</td>
+                      <td>skdjc</td>
+                      <td>Sabun</td>
+                      <td>Byclin</td>
+                      <td>3</td>
+                      <td>(3 / 97)*100</td>
+                      <td>3.25</td>
                     </tr>
                   </tbody>
                 </table>
@@ -139,6 +140,7 @@ onMounted(async () => {
               <div class="title">
                 <h5 class="text-semibold">
                   Kombinasi yang memenuhi minimum confidence > 100%
+                  <!-- nilai confidence 100% diambil dari pilihan opsi pada proses apriori view  -->
                 </h5>
               </div>
               <div class="table">
@@ -158,12 +160,12 @@ onMounted(async () => {
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>divhs</td>
-                      <td>Stella</td>
-                      <td>8</td>
-                      <td>8</td>
-                      <td>8</td>
-                      <td>8</td>
+                      <td>skdjc</td>
+                      <td>Sabun</td>
+                      <td>Byclin</td>
+                      <td>3</td>
+                      <td>(3 / 97)*100</td>
+                      <td>3.25</td>
                     </tr>
                   </tbody>
                 </table>
@@ -187,8 +189,8 @@ onMounted(async () => {
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>divhs</td>
-                      <td>Stella</td>
+                      <td>Apabila pelanggan membeli <b><u>Sabun</u></b>, maka pelanggan juga membeli <b><u>Byclin</u></b></td>
+                      <td>3.25%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -202,3 +204,9 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+tbody td {
+  font-size: 14px;
+}
+</style>
