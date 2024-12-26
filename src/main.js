@@ -7,16 +7,6 @@ import router from './router'
 import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 import "datatables.net-responsive-bs5";
 
-// import '../public/assets/extensions/bootstrap-icons/font/bootstrap-icons.css';
-// import '../public/assets/compiled/css/app.css'
-// import '../public/assets/compiled/css/app-dark.css'
-// import '../public/assets/compiled/css/iconly.css'
-// import '../public/assets/static/js/initTheme.js'
-// import '../public/assets/static/js/components/dark.js'
-// import '../public/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js'
-// import '../public/assets/compiled/js/app.js'
-// import '../public/assets/static/js/pages/dashboard.js'
-
 const app = createApp(App)
 
 app.use(createPinia())
