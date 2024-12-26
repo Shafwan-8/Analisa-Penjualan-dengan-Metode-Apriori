@@ -114,7 +114,7 @@ const logout = () => {
   }).then((result) => {
     if (result.isConfirmed) {
       // localStorage.removeItem("token");
-      window.location.href = "/login";
+      window.location.href = "/";
     }
   });
 };
